@@ -1,18 +1,23 @@
-<div>
-  <div class="form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Update Text</mat-label>
-      <textarea matInput [formControl]="textControl" placeholder="Ex. It makes me feel..."></textarea>
-    </mat-form-field>
+<form [formGroup]="textForm">
+  <mat-form-field class="example-full-width">
+    <mat-label>Update Text</mat-label>
+    <textarea matInput formControlName="text" placeholder="Ex. It makes me feel..."></textarea>
+  </mat-form-field>
 
-    @if (textControl.disabled) {
-      <button mat-raised-button color="primary" (click)="textControl.enable()">Edit</button>
+  <div class="buttons">
+    @if (textForm.disabled) {
+      <button mat-raised-button color="primary" (click)="textForm.enable()">Edit</button>
     } @else {
-      <button mat-raised-button color="primary" (click)="updateText()">Save</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="textForm.invalid" (click)="updateText()">
+        Save
+      </button>
+      <button mat-raised-button color="accent" (click)="cancelOperation()">Cancel</button>
     }
   </div>
+</form>
 
-  <p>
-    {{currentValue}}
-  </p>
+
+<div [ngStyle]="{'font-style': 'Italic', 'font-family':'Comic Sans'}"
+     [ngClass]="{'red': currentValue.length > 50, 'green': currentValue.length < 50}">
+  {{ currentValue }}
 </div>

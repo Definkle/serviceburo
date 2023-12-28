@@ -1,4 +1,4 @@
-.form {
+form {
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -7,4 +7,17 @@
   button {
    width: 30px;
   }
+}
+
+.buttons {
+  display:flex;
+  gap: 10px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
 }
