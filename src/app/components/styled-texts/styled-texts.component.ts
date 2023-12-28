@@ -1,4 +1,4 @@
-import { JsonPipe, NgClass, NgStyle } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {
   FormControl,
@@ -21,20 +21,18 @@ import { DEFAULT_TEXT } from '../../../assets/data/example';
     MatButtonModule,
     NgClass,
     NgStyle,
-    JsonPipe,
   ],
   templateUrl: './styled-texts.component.html',
   styleUrl: './styled-texts.component.scss',
 })
 export class StyledTextsComponent implements OnInit {
-  defaultText = DEFAULT_TEXT;
   textForm = new FormGroup({
     text: new FormControl<string>('', [
       Validators.required,
       Validators.minLength(1),
     ]),
   });
-  currentValue: string = this.defaultText;
+  currentValue: string = DEFAULT_TEXT;
 
   ngOnInit(): void {
     this.textForm.disable();
@@ -42,11 +40,10 @@ export class StyledTextsComponent implements OnInit {
 
   updateText(): void {
     this.currentValue = this.textForm.controls.text.getRawValue() as string;
-    this.textForm.reset();
-    this.textForm.disable();
+    this.cancelUpdate();
   }
 
-  cancelOperation(): void {
+  cancelUpdate(): void {
     this.textForm.reset();
     this.textForm.disable();
   }

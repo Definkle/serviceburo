@@ -22,10 +22,10 @@ import { Book, BookData } from '../../models/book';
   styleUrl: './table.component.scss',
 })
 export class TableComponent implements OnInit, AfterViewInit {
-  books: BookData[] = [];
-  dataSource!: MatTableDataSource<BookData>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  books: BookData[] = [];
+  dataSource!: MatTableDataSource<BookData>;
   displayedColumns: Iterable<string> = [
     'id',
     'name',
