@@ -9,6 +9,10 @@ form {
   }
 }
 
+.wall-of-text {
+  word-break: break-word;
+}
+
 .buttons {
   display:flex;
   gap: 10px;

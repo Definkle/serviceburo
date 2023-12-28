@@ -17,7 +17,8 @@
 </form>
 
 
-<div [ngStyle]="{'font-style': 'Italic', 'font-family':'Comic Sans'}"
+<div class="wall-of-text"
+     [ngStyle]="{'font-style': 'Italic', 'font-family':'Comic Sans'}"
      [ngClass]="{'red': currentValue.length > 50, 'green': currentValue.length < 50}">
   {{ currentValue }}
 </div>
