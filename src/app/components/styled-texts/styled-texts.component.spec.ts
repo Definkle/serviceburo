@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { StyledTextsComponent } from './styled-texts.component';
 
@@ -8,7 +9,7 @@ describe('StyledTextsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StyledTextsComponent],
+      imports: [BrowserAnimationsModule, StyledTextsComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(StyledTextsComponent);
