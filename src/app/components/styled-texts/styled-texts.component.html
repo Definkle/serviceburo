@@ -1,1 +1,18 @@
-<p>styled-texts works!</p>
+<div>
+  <div class="form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Update Text</mat-label>
+      <textarea matInput [formControl]="textControl" placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+
+    @if (textControl.disabled) {
+      <button mat-raised-button color="primary" (click)="textControl.enable()">Edit</button>
+    } @else {
+      <button mat-raised-button color="primary" (click)="updateText()">Save</button>
+    }
+  </div>
+
+  <p>
+    {{currentValue}}
+  </p>
+</div>
