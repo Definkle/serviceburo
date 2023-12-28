@@ -1,5 +1,5 @@
 import { DatePipe, NgOptimizedImage } from '@angular/common';
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
@@ -21,7 +21,7 @@ import { Book, BookData } from '../../models/book';
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss',
 })
-export class TableComponent {
+export class TableComponent implements OnInit, AfterViewInit {
   books: BookData[] = [];
   dataSource!: MatTableDataSource<BookData>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;

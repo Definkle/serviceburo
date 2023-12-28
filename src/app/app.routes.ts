@@ -1,8 +1,5 @@
 import { Routes } from '@angular/router';
 import { LandingComponent } from './components/landing/landing.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { StyledTextsComponent } from './components/styled-texts/styled-texts.component';
-import { TableComponent } from './components/table/table.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
@@ -10,12 +7,25 @@ export const routes: Routes = [
   {
     path: 'table',
     title: 'Table Page',
-    component: TableComponent,
+    loadComponent: () =>
+      import('./components/table/table.component').then(
+        (m) => m.TableComponent
+      ),
   },
   {
     path: 'styled-texts',
     title: 'Styled Texts Page',
-    component: StyledTextsComponent,
+    loadComponent: () =>
+      import('./components/styled-texts/styled-texts.component').then(
+        (m) => m.StyledTextsComponent
+      ),
   },
-  { path: '**', title: 'Page not found', component: PageNotFoundComponent },
+  {
+    path: '**',
+    title: 'Page not found',
+    loadComponent: () =>
+      import('./components/page-not-found/page-not-found.component').then(
+        (m) => m.PageNotFoundComponent
+      ),
+  },
 ];

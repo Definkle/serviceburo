@@ -303,3 +303,6 @@ export const TEST_DATA = {
     last: 'http://www.example.com/books?page%5Bnumber%5D=1&page%5Bsize%5D=10',
   },
 };
+
+export const DEFAULT_TEXT =
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis sem ligula, vel ultricies leo rutrum ac. Nam pharetra tellus vel maximus scelerisque. Pellentesque quis consectetur lorem. Pellentesque in rhoncus purus. Morbi nunc lorem, tempus a risus a, faucibus imperdiet orci. Aliquam tincidunt eleifend malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed feugiat velit eget risus gravida molestie. Etiam non neque luctus, maximus turpis vitae, fringilla est. Suspendisse vitae quam ut lectus pellentesque hendrerit non eu purus. Sed pharetra vitae orci a placerat. Ut blandit dui vitae pharetra congue. Mauris ullamcorper enim non pharetra blandit. Etiam commodo tristique sollicitudin. Aenean urna risus, tempor vel metus in, rutrum consectetur eros.';

@@ -1,5 +1,5 @@
 import { JsonPipe, NgClass, NgStyle } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -9,6 +9,7 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { DEFAULT_TEXT } from '../../../assets/data/example';
 
 @Component({
   selector: 'app-styled-texts',
@@ -25,10 +26,8 @@ import { MatInputModule } from '@angular/material/input';
   templateUrl: './styled-texts.component.html',
   styleUrl: './styled-texts.component.scss',
 })
-export class StyledTextsComponent {
-  defaultText =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis sem ligula, vel ultricies leo rutrum ac. Nam pharetra tellus vel maximus scelerisque. Pellentesque quis consectetur lorem. Pellentesque in rhoncus purus. Morbi nunc lorem, tempus a risus a, faucibus imperdiet orci. Aliquam tincidunt eleifend malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed feugiat velit eget risus gravida molestie. Etiam non neque luctus, maximus turpis vitae, fringilla est. Suspendisse vitae quam ut lectus pellentesque hendrerit non eu purus. Sed pharetra vitae orci a placerat. Ut blandit dui vitae pharetra congue. Mauris ullamcorper enim non pharetra blandit. Etiam commodo tristique sollicitudin. Aenean urna risus, tempor vel metus in, rutrum consectetur eros.';
-
+export class StyledTextsComponent implements OnInit {
+  defaultText = DEFAULT_TEXT;
   textForm = new FormGroup({
     text: new FormControl<string>('', [
       Validators.required,
